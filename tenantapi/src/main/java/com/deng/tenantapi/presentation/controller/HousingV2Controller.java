@@ -1,4 +1,4 @@
-package com.deng.tenantapi.controller;
+package com.deng.tenantapi.presentation.controller;
 
 import java.util.HashMap;
 import java.util.List;
@@ -10,9 +10,10 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.deng.tenantapi.domein.Housing;
-import com.deng.tenantapi.domein.JsonResult;
-import com.deng.tenantapi.repository.HousingRepository;
+import com.deng.tenantapi.domain.Housing;
+import com.deng.tenantapi.domain.JsonResult;
+import com.deng.tenantapi.infrastructure.repository.HousingRepository;
+
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 

@@ -1,4 +1,4 @@
-package com.deng.tenantapi.domein;
+package com.deng.tenantapi.domain;
 
 public class JsonResult<T> {
     private T data;
