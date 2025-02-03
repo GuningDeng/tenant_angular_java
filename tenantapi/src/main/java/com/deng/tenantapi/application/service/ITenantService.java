@@ -4,12 +4,8 @@ import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
-import com.deng.tenantapi.application.dto.HousingDto;
 import com.deng.tenantapi.application.dto.TenantDto;
-import com.deng.tenantapi.domain.Housing;
 import com.deng.tenantapi.domain.Tenant;
-
-import lombok.val;
 
 public interface ITenantService {
     /**

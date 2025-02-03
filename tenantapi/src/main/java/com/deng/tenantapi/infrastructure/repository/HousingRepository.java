@@ -9,4 +9,5 @@ import java.util.List;
 
 public interface HousingRepository extends JpaRepository<Housing, Long> {
     List<HousingDto> findHousingsByOwner(String owner);
+    boolean existsByHousNumber(String houseNumber);
 }

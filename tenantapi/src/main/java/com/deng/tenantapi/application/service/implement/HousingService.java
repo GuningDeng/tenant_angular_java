@@ -77,5 +77,12 @@ public class HousingService implements IHousingService {
         return housingRepository.save(existingHousing);
 
     }
+
+    @Override
+    public boolean existsByHousNumber(String houseNumber) {
+        return housingRepository.existsByHousNumber(houseNumber);
+    }
+
+    
     
 }

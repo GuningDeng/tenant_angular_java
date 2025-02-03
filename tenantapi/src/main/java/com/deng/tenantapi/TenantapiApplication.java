@@ -11,6 +11,12 @@ public class TenantapiApplication {
 		SpringApplication.run(TenantapiApplication.class, args);
 	}
 
+	/**
+	 * OpenAPI
+	 * Swagger UI: http://localhost:8080/swagger-ui/index.html
+	 * 
+	 */
+
 	
 
 }

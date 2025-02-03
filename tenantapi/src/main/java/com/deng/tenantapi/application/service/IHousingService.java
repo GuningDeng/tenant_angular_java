@@ -50,5 +50,7 @@ public interface IHousingService {
      * @return
      */
     public List<HousingDto> findHousingsByOwner(String owner); 
+
+    public boolean existsByHousNumber(String houseNumber);
     
 } 

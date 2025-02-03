@@ -46,5 +46,10 @@ public class HousingV1Controller {
         return housingDtos;
     }
     
+    @GetMapping("/locations/exists/number/{houseNumber}")
+    public boolean checkHousingExistsByHouseNumber(@PathVariable String houseNumber){
+        return housingService.existsByHousNumber(houseNumber);
+    }
+
     
 }
