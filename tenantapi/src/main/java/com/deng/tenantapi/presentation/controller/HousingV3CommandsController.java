@@ -11,7 +11,7 @@ import com.deng.tenantapi.application.cqrs.housings.DeleteHousingCommand;
 import com.deng.tenantapi.application.cqrs.housings.DeleteHousingCommandHandler;
 import com.deng.tenantapi.application.cqrs.housings.UpdateHousingCommand;
 import com.deng.tenantapi.application.cqrs.housings.UpdateHousingCommandHandler;
-import com.deng.tenantapi.domain.Housing;
+import com.deng.tenantapi.application.dto.HousingDetailDto;
 
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -36,16 +36,14 @@ public class HousingV3CommandsController {
     }
     
     @PostMapping("/locations")
-    public void postHousing(@RequestBody Housing housing) {
+    public void postHousing(@RequestBody HousingDetailDto housing) {
         AddHousingCommand addHousingCommand = new AddHousingCommand();
-        addHousingCommand.setHousNumber(housing.getHousNumber());
-        addHousingCommand.setIdCard(housing.getIdCard());
-        addHousingCommand.setOwner(housing.getOwner());
+        addHousingCommand.setHousing(housing);
         addHousingCommndHandler.handle(addHousingCommand);
     }
     
     @PutMapping("/locations/{id}")
-    public void putMethodName(@PathVariable Long id, @RequestBody Housing updateHousing) {
+    public void putMethodName(@PathVariable Long id, @RequestBody HousingDetailDto updateHousing) {
         if(id != updateHousing.getId()){
             throw new RuntimeException("Housing does not exist");
 

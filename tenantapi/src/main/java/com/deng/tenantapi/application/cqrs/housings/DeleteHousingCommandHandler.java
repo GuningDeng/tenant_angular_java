@@ -17,7 +17,7 @@ public class DeleteHousingCommandHandler implements CommandHandler<DeleteHousing
     @Override
     public void handle(DeleteHousingCommand t) {
         Housing existing = housingRepository.findById(t.getId()).orElseThrow(()-> new RuntimeException("housing does not exist"));
-        housingRepository.deleteById(existing.getId());
+        housingRepository.delete(existing);
         
     }
     

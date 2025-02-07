@@ -3,6 +3,7 @@ package com.deng.tenantapi.application.cqrs.housings;
 import org.springframework.stereotype.Service;
 
 import com.deng.tenantapi.application.cqrs.CommandHandler;
+import com.deng.tenantapi.application.dto.HousingDetailDto;
 import com.deng.tenantapi.domain.Housing;
 import com.deng.tenantapi.infrastructure.repository.HousingRepository;
 
@@ -17,7 +18,7 @@ public class UpdateHousingCommandHandler implements CommandHandler<UpdateHousing
     @Override
     public void handle(UpdateHousingCommand t) {
         Housing existing = housingRepository.findById(t.getId()).orElseThrow(() -> new RuntimeException("housing not found"));
-        Housing updateHousing = t.getHousing();
+        HousingDetailDto updateHousing = t.getHousingDetailDto();
         
         existing.setHousNumber(updateHousing.getHousNumber());
         existing.setIdCard(updateHousing.getIdCard());

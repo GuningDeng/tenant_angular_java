@@ -32,7 +32,7 @@ public class Tenant {
 
     private String mobile;
 
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    // @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime rentDateTime;
 
     // @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)

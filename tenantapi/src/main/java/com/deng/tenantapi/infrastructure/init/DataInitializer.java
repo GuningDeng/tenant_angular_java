@@ -23,10 +23,12 @@ public class DataInitializer implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         // Create and save initial Housing data
-        Housing housing1 = new Housing(null, "66", "Jan Jannson", "123456789");
-        Housing housing2 = new Housing(null, "88", "Aan van Hovman", "234567891");
+        Housing housing1 = new Housing(null, "66", "Jan Jannson", "123456789", 1L);
+        Housing housing2 = new Housing(null, "88", "Aan van Hovman", "234567891", 2L);
+        Housing housing3 = new Housing(null, "158", "Bart Peeters", "289768990", 0L);
         housingRepository.save(housing1);
         housingRepository.save(housing2);
+        housingRepository.save(housing3);
 
         // Create and save initial Tenant data
         Tenant tenant1 = new Tenant(null, "ID12345", "123-456-7890", LocalDateTime.now(), housing1);

@@ -1,8 +1,5 @@
 package com.deng.tenantapi.application.cqrs.housings;
 
-import com.deng.tenantapi.application.dto.HousingDetailDto;
-import com.deng.tenantapi.domain.Housing;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -10,6 +7,6 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class AddHousingCommand {
-    private HousingDetailDto housing; 
+public class GetHousingByTenantIdQuery {
+    private Long tenantId;
 }

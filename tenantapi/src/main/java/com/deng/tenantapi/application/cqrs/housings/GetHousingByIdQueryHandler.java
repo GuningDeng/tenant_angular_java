@@ -1,26 +1,32 @@
 package com.deng.tenantapi.application.cqrs.housings;
 
+import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.deng.tenantapi.application.cqrs.QueryHandler;
+import com.deng.tenantapi.application.dto.HousingDetailDto;
 import com.deng.tenantapi.domain.Housing;
 import com.deng.tenantapi.infrastructure.repository.HousingRepository;
 
 @Service
-public class GetHousingByIdQueryHandler implements QueryHandler<GetHousingByIdQuery, Housing> {
+public class GetHousingByIdQueryHandler implements QueryHandler<GetHousingByIdQuery, HousingDetailDto> {
     private final HousingRepository housingRepository;
+    private final ModelMapper mapper;
 
     public GetHousingByIdQueryHandler(HousingRepository housingRepository) {
         this.housingRepository = housingRepository;
+        this.mapper = new ModelMapper();
     }
+
+    // @Autowired
+    // private ModelMapper modelMapper;
+
 
     @Override
-    public Housing handle(GetHousingByIdQuery query) {
-        
-        return housingRepository.findById(query.getId()).orElseThrow(() -> new RuntimeException("housing not found"));
+    public HousingDetailDto handle(GetHousingByIdQuery query) {
+        Housing housing = housingRepository.findById(query.getId()).orElseThrow(() -> new RuntimeException("housing not found"));
+        return mapper.map(housing, HousingDetailDto.class);
     }
-
-    
-    
     
 }

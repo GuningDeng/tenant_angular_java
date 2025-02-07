@@ -72,6 +72,7 @@ public class HousingService implements IHousingService {
         existingHousing.setHousNumber(housing.getHousNumber());
         existingHousing.setOwner(housing.getOwner());
         existingHousing.setIdCard(housing.getIdCard());
+        existingHousing.setTenantId(housing.getTenantId());
 
         // save the updated housing
         return housingRepository.save(existingHousing);

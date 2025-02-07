@@ -13,8 +13,8 @@ import com.deng.tenantapi.application.cqrs.housings.GetHousingByIdQuery;
 import com.deng.tenantapi.application.cqrs.housings.GetHousingByIdQueryHandler;
 import com.deng.tenantapi.application.cqrs.housings.GetHousingByOwnerQuery;
 import com.deng.tenantapi.application.cqrs.housings.GetHousingByOwnerQueryHandler;
+import com.deng.tenantapi.application.dto.HousingDetailDto;
 import com.deng.tenantapi.application.dto.HousingDto;
-import com.deng.tenantapi.domain.Housing;
 
 
 @CrossOrigin
@@ -34,15 +34,15 @@ public class HousingV3QueriesController {
     }
 
     @GetMapping("/locations")
-    public List<Housing> getHousings() {
-        List<Housing> housings = getAllHousingsQueryHandler.handle(null);
+    public List<HousingDetailDto> getHousings() {
+        List<HousingDetailDto> housings = getAllHousingsQueryHandler.handle(null);
         return housings;
     }
     
     @GetMapping("/locations/{id}")
-    public Housing getHousing(@PathVariable Long id) {
+    public HousingDetailDto getHousing(@PathVariable Long id) {
         GetHousingByIdQuery query = new GetHousingByIdQuery(id);
-        Housing housing = getHousingByIdQueryHandler.handle(query);
+        HousingDetailDto housing = getHousingByIdQueryHandler.handle(query);
         System.out.println(housing.toString());
         return housing;
     }

@@ -22,5 +22,6 @@ public class Housing {
     private String housNumber;
     private String owner;
     private String idCard;
+    private Long tenantId;
         
 }
