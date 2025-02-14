@@ -2,7 +2,6 @@ package com.deng.tenantapi.application.dto;
 
 import java.time.LocalDateTime;
 
-import com.deng.tenantapi.domain.Housing;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -15,5 +14,5 @@ public class TenantDetailDto {
     private String idCard;
     private String mobile;
     private LocalDateTime rentDateTime;
-    private Housing housing;
+    private HousingDetailDto housing;
 }

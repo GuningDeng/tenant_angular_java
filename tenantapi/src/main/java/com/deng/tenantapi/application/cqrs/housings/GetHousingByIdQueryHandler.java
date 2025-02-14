@@ -1,7 +1,6 @@
 package com.deng.tenantapi.application.cqrs.housings;
 
 import org.modelmapper.ModelMapper;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.deng.tenantapi.application.cqrs.QueryHandler;
@@ -18,10 +17,6 @@ public class GetHousingByIdQueryHandler implements QueryHandler<GetHousingByIdQu
         this.housingRepository = housingRepository;
         this.mapper = new ModelMapper();
     }
-
-    // @Autowired
-    // private ModelMapper modelMapper;
-
 
     @Override
     public HousingDetailDto handle(GetHousingByIdQuery query) {

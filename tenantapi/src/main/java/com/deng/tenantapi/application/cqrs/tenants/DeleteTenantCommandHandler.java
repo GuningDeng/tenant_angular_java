@@ -20,8 +20,5 @@ public class DeleteTenantCommandHandler implements CommandHandler<DeleteTenantCo
         tenantRepository.delete(existing);
         
     }
-
-    
-    
     
 }

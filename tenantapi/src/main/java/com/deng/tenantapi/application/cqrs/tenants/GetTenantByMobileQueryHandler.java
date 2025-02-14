@@ -21,9 +21,7 @@ public class GetTenantByMobileQueryHandler implements QueryHandler<GetTenantByMo
     @Override
     public TenantDto handle(GetTenantByMobileQuery query) {
         Tenant tenant = tenantRepository.findAll().stream().filter(t -> t.getMobile().equalsIgnoreCase(query.getMobile())).findFirst().orElseThrow(()-> new RuntimeException("tenant does not exist"));
-        // TenantDto tenantDto = new TenantDto();
-        // tenantDto.setMobile(tenant.getMobile());
-        // tenantDto.setRentDateTime(tenant.getRentDateTime());
+        
         return mapper.map(tenant, TenantDto.class);
     }
     

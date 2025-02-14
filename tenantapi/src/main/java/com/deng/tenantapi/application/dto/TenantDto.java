@@ -23,8 +23,5 @@ public class TenantDto {
 
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime rentDateTime;
-
-    // public TenantDto() {
-    // }
         
 }

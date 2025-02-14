@@ -13,8 +13,8 @@ import com.deng.tenantapi.application.cqrs.tenants.GetTenantByIdQuery;
 import com.deng.tenantapi.application.cqrs.tenants.GetTenantByIdQueryHandler;
 import com.deng.tenantapi.application.cqrs.tenants.GetTenantByMobileQuery;
 import com.deng.tenantapi.application.cqrs.tenants.GetTenantByMobileQueryHandler;
+import com.deng.tenantapi.application.dto.TenantDetailDto;
 import com.deng.tenantapi.application.dto.TenantDto;
-import com.deng.tenantapi.domain.Tenant;
 
 @CrossOrigin
 @RestController
@@ -33,17 +33,17 @@ public class TenantV3QueriesController {
 
       
     @GetMapping("tenants")
-    public List<Tenant> getTenants() {
+    public List<TenantDetailDto> getTenants() {
         
-        List<Tenant> tenants = getAllTenantsQueryHandler.handle(null);
+        List<TenantDetailDto> tenants = getAllTenantsQueryHandler.handle(null);
         return tenants;
     }
 
     @GetMapping("tenants/{id}")
-    public Tenant getTenantById(@PathVariable Long id) {
+    public TenantDetailDto getTenantById(@PathVariable Long id) {
         GetTenantByIdQuery query = new GetTenantByIdQuery();
         query.setId(id);
-        Tenant tenant = getTenantByIdQueryHandler.handle(query);
+        TenantDetailDto tenant = getTenantByIdQueryHandler.handle(query);
         return tenant;
     }
 
