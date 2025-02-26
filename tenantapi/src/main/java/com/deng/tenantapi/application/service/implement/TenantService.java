@@ -75,6 +75,12 @@ public class TenantService implements ITenantService {
         // save the updated tenant
         return tenantRepository.save(existingTenant);
     }
+
+    @Override
+    public Tenant findByMobile(String mobile) {
+        Tenant tenant = tenantRepository.findByMobile(mobile).orElseThrow(() -> new RuntimeException("Tenant not found"));
+        return tenant;
+    }
     
     
 }

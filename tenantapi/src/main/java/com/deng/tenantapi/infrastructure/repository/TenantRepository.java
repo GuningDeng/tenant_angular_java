@@ -12,4 +12,5 @@ import com.deng.tenantapi.domain.Tenant;
 public interface TenantRepository extends JpaRepository<Tenant, Long> {
     Optional<TenantDto> findTenantDtoByMobile(String mobile);
     List<Tenant> findByRentDateTime(LocalDateTime rentDateTime);
+    Optional<Tenant> findByMobile(String mobile);
 }

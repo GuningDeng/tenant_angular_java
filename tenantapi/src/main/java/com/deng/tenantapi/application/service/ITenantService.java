@@ -63,4 +63,10 @@ public interface ITenantService {
      * @return
      */
     public List<Tenant> findByRentDateTime(LocalDateTime rentDateTime);
+    /**
+     * get Tenant by mobile
+     * @param mobile
+     * @return
+     */
+    public Tenant findByMobile(String mobile);
 }

@@ -1,5 +1,6 @@
 package com.deng.tenantapi.domain;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -17,10 +18,14 @@ import lombok.NoArgsConstructor;
 public class Housing {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) // Auto-generate the ID
+    @Column(name = "id")
     private Long id;
 
+    @Column(name = "housNumber")
     private String housNumber;
+    @Column(name = "owner")
     private String owner;
+    @Column(name = "idCard")
     private String idCard;
     private Long tenantId;
         

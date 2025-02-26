@@ -6,6 +6,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -25,14 +26,18 @@ import lombok.NoArgsConstructor;
 public class Tenant {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Long id;
 
     @JsonIgnore
+    @Column(name = "idCard")
     private String idCard;
 
+    @Column(name = "mobile")
     private String mobile;
 
     // @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    @Column(name = "rentDateTime")
     private LocalDateTime rentDateTime;
 
     // @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
