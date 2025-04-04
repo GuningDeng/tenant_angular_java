@@ -1,0 +1,18 @@
+spring:
+  redis:
+    host: localhost
+    port: 6379
+    # If you have password-protected Redis, uncomment and set password
+    # password: your_password
+    
+    # Optional Redis configuration
+    timeout: 10000  # Connection timeout in milliseconds
+    database: 0     # Redis database index (0-15)
+    
+    # Pool configuration (if using Lettuce, which is Spring Boot's default Redis client)
+    lettuce:
+      pool:
+        max-active: 8    # Maximum number of connections
+        max-idle: 8      # Maximum number of idle connections
+        min-idle: 0      # Minimum number of idle connections
+        max-wait: -1ms   # Max wait time for connections
